@@ -13,9 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
     @GetMapping("/user_cpu")
     public String userCpu() {
-        for (int i = 0; i < 10000; i++) {
-            Math.sqrt(10000D);
+        double sum = 0D;
+        for (int i = 0; i < 10000000; i++) {
+            sum += Math.sqrt(10000D);
         }
-        return "ok";
+        return "ok " + sum;
     }
 }
